@@ -25,7 +25,7 @@ db.on('error', (err) => {
 
 //Init app
 const app = express()
-
+const port = process.env.PORT || 3000
 let Article = require("./models/article")
 
 //Body Parser (Used to parse form data)
@@ -137,6 +137,6 @@ app.use("/article", articles)
 app.use("/users", users)
 
 //start server
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log("Server started in 3000")
 })
