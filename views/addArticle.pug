@@ -2,16 +2,19 @@ extends layout
 
 block content
   h1 #{title}
-  form(method='POST',action='/article/add')
+  form(method='POST',action='/article/add',enctype="multipart/form-data")
     #form-group
       label Title:
-      input.form-control(name="title",type='text')
+      input.form-control(name="title",type='text',id="title")
     //- #form-group
     //-   label Author:
     //-   input.form-control(name="author",type='text')
     #form-group
       label Body:
-      textarea.form-control(name="body")
+      textarea.form-control(name="body",id="body")
+    #form-group 
+      label Upload: 
+      input.form-control(name='file',type='file',id="file")
     br
-    input.btn.btn-primary(type='submit',value='Submit')
-    
+    input.btn.btn-primary(type='submit',value='Submit',id="submit")
+    //- 

@@ -2,17 +2,23 @@ extends layout
 
 block content
   h1 #{title}
-  form(method='POST',action='/article/edit/'+article._id)
+  form(method='POST',action='/article/edit/'+article._id,id="editForm")
     #form-group
       label Title:
-      input.form-control(name="title",type='text',value=article.title)
+      input.form-control(name="title",type='text',value=article.title,id="title")
     #form-group
       label Author:
-      input.form-control(name="author",type='text',value=article.author)
+      input.form-control(name="author",type='text',value=authorName,disabled=true)
     #form-group
       label Body:
-      textarea.form-control(name="body")= article.body
+      textarea.form-control(name="body",id="body")= article.body
+    #form-group 
+      label Upload: 
+      input.form-control(name='file',type='file',id="editFile")
+    if article.filename
+        a(href='/uploads/'+article.filename) Download Previous File 
     br
-    input.btn.btn-primary(type='submit',value='Submit')
+    br
+    input.btn.btn-primary(type='submit',value='Submit',id="submit")
     
     

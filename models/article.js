@@ -13,6 +13,10 @@ let articleShema = mongoose.Schema({
         type: String,
         required: true
     },
+    filename: {
+        type: String,
+        required: true
+    },
 })
 
 let Article = module.exports = mongoose.model('Article', articleShema)

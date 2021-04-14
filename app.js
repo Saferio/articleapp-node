@@ -30,10 +30,10 @@ let Article = require("./models/article")
 
 //Body Parser (Used to parse form data)
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(express.urlencoded({ extended: true }))
 
 // parse application/json
-app.use(bodyParser.json())
+app.use(express.json())
 app.use(express.static(path.join(__dirname, 'public')))
 
 //Session
